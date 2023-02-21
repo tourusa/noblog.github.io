@@ -1,4 +1,10 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Next.js Notion Starter Kit for GitHub Pages. The code mainly from [nextjs-notion-starter-kit](https://github.com/transitive-bullshit/nextjs-notion-starter-kit).
+
+## Intro
+
+This repo is what I use to power my personal blog and portfolio site [xchb.fun](xchb.fun)
+
+It uses Notion as a CMS, react-notion-x, Next.js, and GitHub Pages.
 
 ## Getting Started
 
