@@ -217,3 +217,27 @@
 .hidden {
   visibility: hidden;
 }
+
+
+.pageLink {
+  height: auto;
+  margin-bottom: 20px;
+  padding: 10px 0;
+  border-bottom: 1px solid #dedede;
+}
+
+.pageLink:last-of-type {
+  border-bottom: none;
+}
+
+.pageLinkContent {
+  margin: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pageLinkDate {
+  color: #777777;
+  font-size: 14px;
+}

@@ -42,7 +42,6 @@ const defaultMapImageUrl = (url, block) => {
   notionImageUrlV2.searchParams.set("id", block.id);
   notionImageUrlV2.searchParams.set("cache", "v2");
   url = notionImageUrlV2.toString();
-  console.log("url--->", url);
   return url;
 };
 
