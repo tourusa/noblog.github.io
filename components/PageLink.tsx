@@ -7,8 +7,8 @@ import classNames from "classnames";
 
 import styles from "./styles.module.css";
 
-const defaultPageCover =
-  "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/1ce00415-5382-49e0-817d-cdd84e9ccce6/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230221%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230221T163202Z&X-Amz-Expires=86400&X-Amz-Signature=91727a3fdbef9355b146ff3e7e47fbfe48d27480da2c0bc133d4716cece48701&X-Amz-SignedHeaders=host&x-id=GetObject";
+const defaultPageThumbCover =
+  "https://lf3-static.bytednsdoc.com/obj/eden-cn/upinulojnuvpe/eschool/123123-school-offline.png";
 
 export const PageLink: React.FC<{
   href: string;
@@ -31,7 +31,9 @@ export const PageLink: React.FC<{
         height={80}
         width={120}
         alt="cover"
-        src={format.page_cover || config.defaultPageCover || defaultPageCover}
+        src={
+          format.page_cover || config.defaultPageCover || defaultPageThumbCover
+        }
       />
       <span className={styles.pageLinkContent}>
         {props.children}
