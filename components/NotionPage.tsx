@@ -99,7 +99,7 @@ const Modal = dynamic(
 );
 
 const Tweet = ({ id }: { id: string }) => {
-  return <div />;
+  return <div>{id}</div>;
 };
 
 const propertyLastEditedTimeValue = (
@@ -154,7 +154,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
 
   const components = React.useMemo(
     () => ({
-      PageLink,
+      // PageLink,
       nextImage: Image,
       nextLink: Link,
       Code,
@@ -237,8 +237,6 @@ export const NotionPage: React.FC<types.PageProps> = ({
 
   const canonicalPageUrl =
     !config.isDev && getCanonicalPageUrl(site, recordMap)(pageId);
-
-  console.log("block", block);
 
   const socialImage = mapImageUrl(
     getPageProperty<string>("Social Image", block, recordMap) ||
