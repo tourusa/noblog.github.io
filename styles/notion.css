@@ -385,3 +385,10 @@
 .notion-block-260baa77f1e1428b97fb14ac99c7c385 {
   display: none;
 }
+
+.notion-aside-table-of-contents {
+  align-items: flex-start;
+}
+.notion-aside-table-of-contents-header {
+  text-transform: none;
+}

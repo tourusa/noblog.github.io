@@ -206,7 +206,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
     [block, recordMap, isBlogPost]
   );
 
-  const footer = React.useMemo(() => <Footer />, []);
+  const footer = React.useMemo(() => <div />, []);
 
   if (router.isFallback) {
     return <Loading />;
@@ -216,18 +216,28 @@ export const NotionPage: React.FC<types.PageProps> = ({
     return <Page404 site={site} pageId={pageId} error={error} />;
   }
 
+  // fix the collection does not show the picture
+  if (block.type.startsWith("collection_view") && block.collection_id) {
+    try {
+      const collection = recordMap.collection[block.collection_id].value;
+      block.format = {
+        ...block.format,
+        page_cover: collection.cover || undefined,
+        page_icon: collection.icon,
+      };
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
   const title = getBlockTitle(block, recordMap) || site.name;
 
-  config.isDev &&
-    console.log("notion page", {
-      isDev: config.isDev,
-      title,
-      pageId,
-      rootNotionPageId: site.rootNotionPageId,
-      recordMap,
-    });
+  if (config.isDev) {
+    console.log("block", block);
+    console.log("recordMap", recordMap);
+  }
 
-  if (!config.isServer) {
+  if (!config.isServer && config.isDev) {
     // add important objects to the window global for easy debugging
     const g = window as any;
     g.pageId = pageId;

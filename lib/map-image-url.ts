@@ -27,12 +27,14 @@ const defaultMapImageUrl = (url, block) => {
       }
     }
   } catch (e) {}
+
   if (url.startsWith("/images")) {
-    url = `https://www.notion.so${url}`;
+    return `https://www.notion.so${url}`;
   }
   url = `https://www.notion.so${
     url.startsWith("/image") ? url : `/image/${encodeURIComponent(url)}`
   }`;
+
   const notionImageUrlV2 = new URL(url);
   let table = block.parent_table === "space" ? "block" : block.parent_table;
   if (table === "collection" || table === "team") {

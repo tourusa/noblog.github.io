@@ -1,57 +1,63 @@
-import * as React from 'react'
+import * as React from "react";
 
-import * as types from 'notion-types'
-import { IoMoonSharp } from '@react-icons/all-files/io5/IoMoonSharp'
-import { IoSunnyOutline } from '@react-icons/all-files/io5/IoSunnyOutline'
-import cs from 'classnames'
-import { Breadcrumbs, Header, Search, useNotionContext } from 'react-notion-x'
+import * as types from "notion-types";
+import { IoMoonSharp } from "@react-icons/all-files/io5/IoMoonSharp";
+import { IoSunnyOutline } from "@react-icons/all-files/io5/IoSunnyOutline";
+import cs from "classnames";
+import { Header, Search, useNotionContext } from "react-notion-x";
 
-import { isSearchEnabled, navigationLinks, navigationStyle } from '@/lib/config'
-import { useDarkMode } from '@/lib/use-dark-mode'
+import {
+  isSearchEnabled,
+  navigationLinks,
+  navigationStyle,
+} from "@/lib/config";
+import { useDarkMode } from "@/lib/use-dark-mode";
 
-import styles from './styles.module.css'
+import styles from "./styles.module.css";
+import { Breadcrumbs } from "./Breadcrumbs";
 
 const ToggleThemeButton = () => {
-  const [hasMounted, setHasMounted] = React.useState(false)
-  const { isDarkMode, toggleDarkMode } = useDarkMode()
+  const [hasMounted, setHasMounted] = React.useState(false);
+  const { isDarkMode, toggleDarkMode } = useDarkMode();
 
   React.useEffect(() => {
-    setHasMounted(true)
-  }, [])
+    setHasMounted(true);
+  }, []);
 
   const onToggleTheme = React.useCallback(() => {
-    toggleDarkMode()
-  }, [toggleDarkMode])
+    toggleDarkMode();
+  }, [toggleDarkMode]);
 
   return (
     <div
-      className={cs('breadcrumb', 'button', !hasMounted && styles.hidden)}
+      className={cs("breadcrumb", "button", !hasMounted && styles.hidden)}
       onClick={onToggleTheme}
     >
       {hasMounted && isDarkMode ? <IoMoonSharp /> : <IoSunnyOutline />}
     </div>
-  )
-}
+  );
+};
 
 export const NotionPageHeader: React.FC<{
-  block: types.CollectionViewPageBlock | types.PageBlock
+  block: types.CollectionViewPageBlock | types.PageBlock;
 }> = ({ block }) => {
-  const { components, mapPageUrl } = useNotionContext()
+  const { components, mapPageUrl } = useNotionContext();
 
-  if (navigationStyle === 'default') {
-    return <Header block={block} />
+  console.log("navigationStyle", navigationStyle);
+  if (navigationStyle === "default") {
+    return <Header block={block} />;
   }
 
   return (
-    <header className='notion-header'>
-      <div className='notion-nav-header'>
-        <Breadcrumbs block={block} rootOnly={true} />
+    <header className="notion-header">
+      <div className="notion-nav-header">
+        <Breadcrumbs block={block} rootOnly={false} />
 
-        <div className='notion-nav-header-rhs breadcrumbs'>
+        <div className="notion-nav-header-rhs breadcrumbs">
           {navigationLinks
             ?.map((link, index) => {
               if (!link.pageId && !link.url) {
-                return null
+                return null;
               }
 
               if (link.pageId) {
@@ -59,21 +65,21 @@ export const NotionPageHeader: React.FC<{
                   <components.PageLink
                     href={mapPageUrl(link.pageId)}
                     key={index}
-                    className={cs(styles.navLink, 'breadcrumb', 'button')}
+                    className={cs(styles.navLink, "breadcrumb", "button")}
                   >
                     {link.title}
                   </components.PageLink>
-                )
+                );
               } else {
                 return (
                   <components.Link
                     href={link.url}
                     key={index}
-                    className={cs(styles.navLink, 'breadcrumb', 'button')}
+                    className={cs(styles.navLink, "breadcrumb", "button")}
                   >
                     {link.title}
                   </components.Link>
-                )
+                );
               }
             })
             .filter(Boolean)}
@@ -84,5 +90,5 @@ export const NotionPageHeader: React.FC<{
         </div>
       </div>
     </header>
-  )
-}
+  );
+};
