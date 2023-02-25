@@ -217,12 +217,16 @@ export const NotionPage: React.FC<types.PageProps> = ({
   }
 
   // fix the collection does not show the picture
-  if (block.type.startsWith("collection_view") && block.collection_id) {
+  if (
+    block.type.startsWith("collection_view") &&
+    (block as any).collection_id
+  ) {
     try {
-      const collection = recordMap.collection[block.collection_id].value;
+      const collection =
+        recordMap.collection[(block as any).collection_id].value;
       block.format = {
         ...block.format,
-        page_cover: collection.cover || undefined,
+        page_cover: (collection as any).cover || undefined,
         page_icon: collection.icon,
       };
     } catch (e) {
