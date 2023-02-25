@@ -12,24 +12,24 @@ const defaultMapImageUrl = (url, block) => {
   if (url.startsWith("https://images.unsplash.com")) {
     return url;
   }
-  try {
-    const u = new URL(url);
-    if (
-      u.pathname.startsWith("/secure.notion-static.com") &&
-      u.hostname.endsWith(".amazonaws.com")
-    ) {
-      if (
-        u.searchParams.has("X-Amz-Credential") &&
-        u.searchParams.has("X-Amz-Signature") &&
-        u.searchParams.has("X-Amz-Algorithm")
-      ) {
-        return url;
-      }
-    }
-  } catch (e) {}
+  // try {
+  //   const u = new URL(url);
+  //   if (
+  //     u.pathname.startsWith("/secure.notion-static.com") &&
+  //     u.hostname.endsWith(".amazonaws.com")
+  //   ) {
+  //     if (
+  //       u.searchParams.has("X-Amz-Credential") &&
+  //       u.searchParams.has("X-Amz-Signature") &&
+  //       u.searchParams.has("X-Amz-Algorithm")
+  //     ) {
+  //       return url;
+  //     }
+  //   }
+  // } catch (e) {}
 
   if (url.startsWith("/images")) {
-    return `https://www.notion.so${url}`;
+    url = `https://www.notion.so${url}`;
   }
   url = `https://www.notion.so${
     url.startsWith("/image") ? url : `/image/${encodeURIComponent(url)}`
