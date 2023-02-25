@@ -107,6 +107,11 @@ export const navigationLinks: Array<NavigationLink | null> = getSiteConfig(
   "navigationLinks",
   null
 );
+console.log("process.env.GOOGLE_ANALYTICS->", process.env.GOOGLE_ANALYTICS);
+export const googleAnalytics: string | undefined = getSiteConfig(
+  "googleAnalytics",
+  process.env.GOOGLE_ANALYTICS || null
+);
 
 // Optional site search
 export const isSearchEnabled: boolean = getSiteConfig("isSearchEnabled", false);

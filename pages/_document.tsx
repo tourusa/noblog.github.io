@@ -1,7 +1,8 @@
 import * as React from "react";
 import Document, { Head, Html, Main, NextScript } from "next/document";
-
+import { googleAnalytics } from "@/lib/config";
 import { IconContext } from "@react-icons/all-files";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 export default class MyDocument extends Document {
   render() {
@@ -16,22 +17,12 @@ export default class MyDocument extends Document {
               sizes="32x32"
               href="favicon.png"
             />
-
-            <link rel="manifest" href="/manifest.json" />
           </Head>
 
           <body>
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-          
-            gtag('config', 'G-3LTDW72KLK');
-            `,
-              }}
-            />
+            {googleAnalytics ? (
+              <GoogleAnalytics ga_id={googleAnalytics} />
+            ) : null}
             <script
               dangerouslySetInnerHTML={{
                 __html: `
