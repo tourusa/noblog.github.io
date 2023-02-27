@@ -61,3 +61,7 @@ Edit the git repo info in `.github/workflows/main.yaml` line 33, change the `rep
 4. Config the GitHub Pages to use the build files in the repo's `Settings` -> `Pages`, change the Branch to the `doc` or other branch that you config in the `.github/workflows/main.yaml`.
 
 All things are done, visit the xxxx.github.io to view your blog.
+
+## Notion Page Tips
+
+If you want to using the GitHub mention, you should connect to github in Notion, so you there will some other infomartion.
