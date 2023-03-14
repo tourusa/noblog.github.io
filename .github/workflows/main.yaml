@@ -26,6 +26,8 @@ jobs:
         run: yarn build
         env: 
           GOOGLE_ANALYTICS: ${{ secrets.GOOGLE_ANALYTICS }}
+      - name: SiteMap
+        run: yarn sitemap
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:

@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build && next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "sitemap": "node sitemap.js"
   },
   "dependencies": {
     "@fisch0920/use-dark-mode": "^2.4.0",
