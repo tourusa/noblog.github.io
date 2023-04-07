@@ -3,19 +3,19 @@ import { siteConfig } from "./lib/site-config";
 export default siteConfig({
   // the site's root Notion page (required)
   // rootNotionPageId: "09e1941d66b44b6b988a39310378ae94",
-  rootNotionPageId: "d653a0d94b4c410db22d6e92da01fa03",
+  rootNotionPageId: "a3d5dee165434e08919f26a06350103b",
 
   // if you want to restrict pages to a single notion workspace (optional)
   // (this should be a Notion ID; see the docs for how to extract this)
   rootNotionSpaceId: undefined,
 
   // basic site info (required)
-  name: "Do Not Evil",
-  domain: "xchb.fun",
-  author: "xchb",
+  name: "叁山陆玖",
+  domain: "nbcs.cf",
+  author: "Alsen Lea",
 
   // open graph metadata (optional)
-  description: "Do not evil, to be a better man",
+  description: "3+3=6||3X3=9",
 
   // social usernames (optional)
   twitter: "",
@@ -32,7 +32,7 @@ export default siteConfig({
   defaultPageCoverPosition: 0.5,
 
   // whether or not to enable support for LQIP preview images (optional)
-  isPreviewImageSupportEnabled: false,
+  isPreviewImageSupportEnabled: true,
 
   isSearchEnabled: undefined,
 
