@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-      <loc>https://nbcs.cf</loc>
+      <loc>https://io.nbcs.cf</loc>
     </url>
 
     <url>
-      <loc>https://nbcs.cf/</loc>
+      <loc>https://io.nbcs.cf/</loc>
     </url>
 
     <url>
-            <loc>https://nbcs.cf/叁山陆玖</loc>
+            <loc>https://io.nbcs.cf/叁山陆玖</loc>
           </url><url>
-            <loc>https://nbcs.cf/one-guy-two-islands-tree-days-day2</loc>
+            <loc>https://io.nbcs.cf/one-guy-two-islands-tree-days-day2</loc>
           </url><url>
-            <loc>https://nbcs.cf/nextjs-notion-starter-kit</loc>
+            <loc>https://io.nbcs.cf/nextjs-notion-starter-kit</loc>
           </url><url>
-            <loc>https://nbcs.cf/example-article</loc>
+            <loc>https://io.nbcs.cf/custom-slug</loc>
           </url><url>
-            <loc>https://nbcs.cf/one-guy-two-islands-tree-days-day1</loc>
+            <loc>https://io.nbcs.cf/one-guy-two-islands-tree-days-day1</loc>
           </url><url>
-            <loc>https://nbcs.cf/custom-slug</loc>
+            <loc>https://io.nbcs.cf/example-article</loc>
           </url><url>
-            <loc>https://nbcs.cf/072e40d0f74149598872259450cec181</loc>
+            <loc>https://io.nbcs.cf/072e40d0f74149598872259450cec181</loc>
           </url>
   </urlset>
