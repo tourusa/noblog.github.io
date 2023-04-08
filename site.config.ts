@@ -11,14 +11,14 @@ export default siteConfig({
 
   // basic site info (required)
   name: "叁山陆玖",
-  domain: "nbcs.cf",
+  domain: "io.nbcs.cf",
   author: "Alsen Lea",
 
   // open graph metadata (optional)
   description: "3+3=6||3X3=9",
 
   // social usernames (optional)
-  twitter: "",
+  twitter: "alsenlea",
   github: "",
   linkedin: "",
   // mastodon: '#', // optional mastodon profile URL, provides link verification
@@ -34,7 +34,7 @@ export default siteConfig({
   // whether or not to enable support for LQIP preview images (optional)
   isPreviewImageSupportEnabled: true,
 
-  isSearchEnabled: undefined,
+  isSearchEnabled: true,
 
   // whether or not redis is enabled for caching generated preview images (optional)
   // NOTE: if you enable redis, you need to set the `REDIS_HOST` and `REDIS_PASSWORD`
